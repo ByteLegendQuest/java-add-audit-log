@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.bytelegend.Logger;
+import com.bytelegend.Logger;
 
 public class Utils {
     public static List<Person> filterPeopleWithSalaryMoreThan1(List<Person> people, int salary) {
