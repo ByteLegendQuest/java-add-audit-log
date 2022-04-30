@@ -1,5 +1,7 @@
 package com.bytelegend.encapsulation;
 
+import com.bytelegend.Logger;
+
 /**
  * `Person` class has a `salary` field, since salary is usually sensitive information, we want any
  * code that accesses `salary` field to be recorded in the log for audit later.
@@ -14,9 +16,13 @@ package com.bytelegend.encapsulation;
  * `getSalary()` method - nothing else needs to be changed.
  */
 public class Person {
-    /** The person's name. */
+    /**
+     * The person's name.
+     */
     private final String name;
-    /** The person's salary. */
+    /**
+     * The person's salary.
+     */
     private final int salary;
 
     public Person(String name, int salary) {
@@ -29,6 +35,7 @@ public class Person {
     }
 
     public int getSalary() {
+        Logger.logAccessToSalaryOfPerson(name);
         return salary;
     }
 }
