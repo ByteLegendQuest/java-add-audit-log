@@ -37,7 +37,7 @@ public class Utils {
         Map<String, Integer> map = new HashMap<>();
         for (Person p : people) {
             map.put(p.name, p.salary);
-            Logger.logAccessToSalaryOfPerson(person.name);
+            Logger.logAccessToSalaryOfPerson(p.name);
         }
         return map;
     }
