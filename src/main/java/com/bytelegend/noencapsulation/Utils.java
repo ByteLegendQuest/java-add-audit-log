@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class Utils {
     public static List<Person> filterPeopleWithSalaryMoreThan1(List<Person> people, int salary) {
         for(Person p : people) {
-            Logger.logAccessToSalaryOfPerson(p.name)
+            Logger.logAccessToSalaryOfPerson(p.name);
         }
         return people.stream().filter(p -> p.salary > salary).collect(Collectors.toList());
     }
@@ -18,7 +18,7 @@ public class Utils {
         List<Person> list = new ArrayList<>();
         for (Person p : people) {
             if (p.salary > salary) {
-                Logger.logAccessToSalaryOfPerson(p.name)
+                Logger.logAccessToSalaryOfPerson(p.name);
                 list.add(p);
             }
         }
@@ -27,7 +27,7 @@ public class Utils {
 
     public static Map<String, Integer> getNameToSalaryMap1(List<Person> people) {
         for(Person p : people) {
-            Logger.logAccessToSalaryOfPerson(p.name)
+            Logger.logAccessToSalaryOfPerson(p.name);
         }
         return people.stream().collect(Collectors.toMap(p -> p.name, p -> p.salary));
     }
@@ -35,7 +35,7 @@ public class Utils {
     public static Map<String, Integer> getNameToSalaryMap2(List<Person> people) {
         Map<String, Integer> map = new HashMap<>();
         for (Person p : people) {
-            Logger.logAccessToSalaryOfPerson(p.name)
+            Logger.logAccessToSalaryOfPerson(p.name);
             map.put(p.name, p.salary);
         }
         return map;
