@@ -14,13 +14,9 @@ package com.bytelegend.noencapsulation;
  * `getSalary()` method - nothing else needs to be changed.
  */
 public class Person {
-    /**
-     * The person's name.
-     */
+    /** The person's name. */
     public final String name;
-    /**
-     * The person's salary.
-     */
+    /** The person's salary. */
     public final int salary;
 
     public Person(String name, int salary) {
