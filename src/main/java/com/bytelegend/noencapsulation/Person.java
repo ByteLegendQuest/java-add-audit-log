@@ -1,45 +1,30 @@
 package com.bytelegend.noencapsulation;
 
-import com.bytelegend.Logger;
+/**
+ * `Person` class has a `salary` field, since salary is usually sensitive information, we want any
+ * code that accesses `salary` field to be recorded in the log for audit later.
+ *
+ * <p>Please use `Logger.logAccessToSalaryOfPerson()` to record a log whenever you access `salary`
+ * field of `Person` class, for example:
+ *
+ * <p>``` int salary = person.salary; Logger.logAccessToSalaryOfPerson(person.name); ```
+ *
+ * <p>For the code without encapsulation, we need to add logs to all the places that access `salary`
+ * field. For the code with encapsulation, we only need to change the implementation of
+ * `getSalary()` method - nothing else needs to be changed.
+ */
+public class Person {
+    /**
+     * The person's name.
+     */
+    public final String name;
+    /**
+     * The person's salary.
+     */
+    public final int salary;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-public class Utils {
-    public static List<Person> filterPeopleWithSalaryMoreThan1(List<Person> people, int salary) {
-        return people.stream().filter(p -> {
-            Logger.logAccessToSalaryOfPerson(p.name);
-            return p.salary > salary;
-        }).collect(Collectors.toList());
-    }
-
-    public static List<Person> filterPeopleWithSalaryMoreThan2(List<Person> people, int salary) {
-        List<Person> list = new ArrayList<>();
-        for (Person p : people) {
-            if (p.salary > salary) {
-                list.add(p);
-                Logger.logAccessToSalaryOfPerson(p.name);
-            }
-        }
-        return list;
-    }
-
-    public static Map<String, Integer> getNameToSalaryMap1(List<Person> people) {
-        return people.stream().collect(Collectors.toMap(p -> p.name, p -> {
-            Logger.logAccessToSalaryOfPerson(p.name);
-            return p.salary;
-        }));
-    }
-
-    public static Map<String, Integer> getNameToSalaryMap2(List<Person> people) {
-        Map<String, Integer> map = new HashMap<>();
-        for (Person p : people) {
-            map.put(p.name, p.salary);
-            Logger.logAccessToSalaryOfPerson(p.name);
-        }
-        return map;
+    public Person(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
     }
 }
