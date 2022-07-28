@@ -1,5 +1,4 @@
 package com.bytelegend.encapsulation;
-import com.bytelegend.Logger;
 
 /**
  * `Person` class has a `salary` field, since salary is usually sensitive information, we want any
@@ -30,8 +29,6 @@ public class Person {
     }
 
     public int getSalary() {
-        int slr = this.salary;
-        Logger.logAccessToSalaryOfPerson(this.name);
-        return slr;
+        return salary;
     }
 }
