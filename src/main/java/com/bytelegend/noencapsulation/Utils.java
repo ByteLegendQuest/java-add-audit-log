@@ -24,7 +24,7 @@ public class Utils {
     }
 
     public static Map<String, Integer> getNameToSalaryMap1(List<Person> people) {
-        return people.stream().peek(p -> Logger.logAccessToSalaryOfPerson(p.name)).collect(Collectors.toMap(p ->  {p.name, p -> p.salary}));
+        return people.stream().peek(p -> Logger.logAccessToSalaryOfPerson(p.name)).collect(Collectors.toMap(p -> p.name, p -> p.salary));
     }
 
     public static Map<String, Integer> getNameToSalaryMap2(List<Person> people) {
