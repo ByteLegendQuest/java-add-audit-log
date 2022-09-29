@@ -1,5 +1,7 @@
 package com.bytelegend.noencapsulation;
 
+import com.bytelegend.Logger;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,10 +10,16 @@ import java.util.stream.Collectors;
 
 public class Utils {
     public static List<Person> filterPeopleWithSalaryMoreThan1(List<Person> people, int salary) {
+        people.forEach(person -> {
+            Logger.logAccessToSalaryOfPerson(person.name);
+        });
         return people.stream().filter(p -> p.salary > salary).collect(Collectors.toList());
     }
 
     public static List<Person> filterPeopleWithSalaryMoreThan2(List<Person> people, int salary) {
+        people.forEach(person -> {
+            Logger.logAccessToSalaryOfPerson(person.name);
+        });
         List<Person> list = new ArrayList<>();
         for (Person p : people) {
             if (p.salary > salary) {
@@ -22,10 +30,16 @@ public class Utils {
     }
 
     public static Map<String, Integer> getNameToSalaryMap1(List<Person> people) {
+        people.forEach(person -> {
+            Logger.logAccessToSalaryOfPerson(person.name);
+        });
         return people.stream().collect(Collectors.toMap(p -> p.name, p -> p.salary));
     }
 
     public static Map<String, Integer> getNameToSalaryMap2(List<Person> people) {
+        people.forEach(person -> {
+            Logger.logAccessToSalaryOfPerson(person.name);
+        });
         Map<String, Integer> map = new HashMap<>();
         for (Person p : people) {
             map.put(p.name, p.salary);
