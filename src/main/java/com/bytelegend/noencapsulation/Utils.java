@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Utils {
     public static List<Person> filterPeopleWithSalaryMoreThan1(List<Person> people, int salary) {
-        return people.stream().filter(p -> p.salary > salary;Logger.logAccessToSalaryOfPerson(p.name)).collect(Collectors.toList());
+        return people.stream().filter(p -> p.salary > salary{ Logger.logAccessToSalaryOfPerson(p.name)}).collect(Collectors.toList());
     }
 
     public static List<Person> filterPeopleWithSalaryMoreThan2(List<Person> people, int salary) {
