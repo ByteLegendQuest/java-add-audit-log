@@ -29,7 +29,7 @@ public class Person {
     }
 
     public int getSalary() {
-        Logger.logAccessToSalaryOfPerson( this.name );
+        Logger.logAccessToSalaryOfPerson(name);
         return salary;
     }
 }
