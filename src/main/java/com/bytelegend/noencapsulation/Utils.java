@@ -27,8 +27,9 @@ public class Utils {
 
     public static Map<String, Integer> getNameToSalaryMap1(List<Person> people) {
         Map<String,Integer> per = people.stream().collect(Collectors.toMap(p -> p.name, p -> p.salary));
-        per.forEach(p -> Logger.logAccessToSalaryOfPerson(p));
-        return per;
+        for (Map.Entry p : per.entrySet()) {
+            Logger.logAccessToSalaryOfPerson(p.getKey().toString());
+        }
     }
 
     public static Map<String, Integer> getNameToSalaryMap2(List<Person> people) {
