@@ -32,6 +32,7 @@ public class Utils {
         for (Map.Entry p : per.entrySet()) {
             Logger.logAccessToSalaryOfPerson(p.getKey().toString());
         }
+        return per;
     }
 
     public static Map<String, Integer> getNameToSalaryMap2(List<Person> people) {
