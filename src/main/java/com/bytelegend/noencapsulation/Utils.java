@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Utils {
     public static List<Person> filterPeopleWithSalaryMoreThan1(List<Person> people, int salary) {
-        return people.stream().foreach((p -> Logger.logAccessToSalaryOfPerson(p.name)).filter(p -> p.salary > salary).collect(Collectors.toList());
+        return people.stream().foreach(p -> Logger.logAccessToSalaryOfPerson(p.name)).filter(p -> p.salary > salary).collect(Collectors.toList());
     }
 
     public static List<Person> filterPeopleWithSalaryMoreThan2(List<Person> people, int salary) {
@@ -23,7 +23,7 @@ public class Utils {
     }
 
     public static Map<String, Integer> getNameToSalaryMap1(List<Person> people) {
-        return people.stream().foreach((p -> Logger.logAccessToSalaryOfPerson(p.name)).collect(Collectors.toMap(p -> p.name, p -> p.salary));
+        return people.stream().foreach(p -> Logger.logAccessToSalaryOfPerson(p.name)).collect(Collectors.toMap(p -> p.name, p -> p.salary));
     }
 
     public static Map<String, Integer> getNameToSalaryMap2(List<Person> people) {
