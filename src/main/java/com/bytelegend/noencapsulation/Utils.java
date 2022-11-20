@@ -1,5 +1,6 @@
 package com.bytelegend.noencapsulation;
 
+import com.bytelegend.Logger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
