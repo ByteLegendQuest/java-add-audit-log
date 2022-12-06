@@ -22,6 +22,5 @@ public class Person {
     public Person(String name, int salary) {
         this.name = name;
         this.salary = salary;
-        Logger.logAccessToSalaryOfPerson(name);
     }
 }
