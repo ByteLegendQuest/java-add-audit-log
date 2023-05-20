@@ -25,7 +25,7 @@ public class Person {
     }
 
     public int salary() {
-        Logger.logAccessToSalaryOfPerson(person.name);
+        Logger.logAccessToSalaryOfPerson(name);
         return salary;
     }
 }
