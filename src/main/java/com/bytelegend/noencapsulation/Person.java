@@ -23,4 +23,9 @@ public class Person {
         this.name = name;
         this.salary = salary;
     }
+
+    public int salary() {
+        Logger.logAccessToSalaryOfPerson(person.name);
+        return salary;
+    }
 }
