@@ -28,7 +28,7 @@ public class Utils {
     public static Map<String, Integer> getNameToSalaryMap1(List<Person> people) {
         return people.stream().collect(Collectors.toMap(p -> p.name, p -> {
             Logger.logAccessToSalaryOfPerson(p.name);
-            return p.salary
+            return p.salary;
         }));
     }
 
